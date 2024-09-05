@@ -1,1 +1,1 @@
-Standaard Regristratie en inlog pagina's
+# Mini project voor Regristreren en Inloggen
