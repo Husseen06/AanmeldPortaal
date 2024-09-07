@@ -20,9 +20,11 @@ $gebruikersnaam = htmlspecialchars($_SESSION['gebruikersnaam']);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
 <link rel="stylesheet" href="dashboard  .css">
+<link rel="stylesheet" href="dashboard  .css">
 </head>
 <body>
     <div class="container">
+        <h1>Welkom, <?php echo $gebruikersnaam; ?>!</h1>
         <h1>Welkom, <?php echo $gebruikersnaam; ?>!</h1>
         <p>Je bent succesvol ingelogd.</p>
         <div class="logout">
