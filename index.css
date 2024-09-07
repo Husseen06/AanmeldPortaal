@@ -1,0 +1,35 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+    margin: 0;
+    background-color: #f4f4f4;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #333;
+}
+
+.nav-links {
+    margin-top: 20px;
+}
+
+.nav-links a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #007bff;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}

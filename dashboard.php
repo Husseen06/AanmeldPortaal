@@ -23,14 +23,14 @@ $gebruikersnaam = htmlspecialchars($_SESSION['gebruikersnaam']);
 </head>
 <body>
     <div class="container">
-        <h1>Welkom op je dashboard, <?php echo $gebruikersnaam; ?>!</h1>
+        <h1>Welkom, <?php echo $gebruikersnaam; ?>!</h1>
         <p>Je bent succesvol ingelogd.</p>
         <div class="logout">
             <a href="logout.php">Uitloggen</a>
         </div>
     </div>
     <div class="home">
-        <a href="home.html">Home</a>
+        <a href="index.html">Homepagina</a>
 </div>
 </body>
 </html>
