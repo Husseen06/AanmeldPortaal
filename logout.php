@@ -1,11 +1,11 @@
 <?php
-// Start the session
+// Start de session
 session_start();
 
-// Destroy the session to log out the user
+// Stop de sessie om uitteloggen
 session_destroy();
 
-// Redirect to the login page
+// Redirect naar de loginpagina
 header('Location: login.html');
 exit;
 ?>

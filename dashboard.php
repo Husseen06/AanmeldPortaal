@@ -3,7 +3,7 @@
 session_start();
 
 // Check if the user is logged in by checking the session
-if (!isset($_SESSION['gebruikersnaam'])) {
+if (!isset($_SESSION['@gebruikersnaam'])) {
     // If the session is not set, redirect to the login page
     header('Location: login.php');
     exit;
@@ -19,21 +19,7 @@ $gebruikersnaam = htmlspecialchars($_SESSION['gebruikersnaam']);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-        .container {
-            margin: 50px;
-            text-align: center;
-        }
-        h1 {
-            color: #333;
-        }
-        .logout {
-            margin-top: 20px;
-        }
-    </style>
+<link rel="stylesheet" href="dashboard  .css">
 </head>
 <body>
     <div class="container">
@@ -43,5 +29,8 @@ $gebruikersnaam = htmlspecialchars($_SESSION['gebruikersnaam']);
             <a href="logout.php">Uitloggen</a>
         </div>
     </div>
+    <div class="home">
+        <a href="home.html">Home</a>
+</div>
 </body>
 </html>
