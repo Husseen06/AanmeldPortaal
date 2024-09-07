@@ -1,13 +1,18 @@
 <?php
-// Verbind met de database
+// Controleer of het formulier is verzonden via POST
+if(isset($_POST['submit'])) {
+    // Als het formulier is verzonden, druk dan de ontvangen gegevens af
+    echo "<pre>".print_r($_POST, true)."</pre>";
+}
+
+// Haal de ingediende formuliergegevens op en wijs ze toe aan variabelen
+$gebruikersnaam = $_POST['gebruikersnaam']; // Gebruikersnaam
+$wachtwoord = $_POST['wachtwoord']; // Wachtwoord
+
+// Maak een databaseverbinding met behulp van PDO
 $dsn = "mysql:host=localhost;dbname=inlog project"; // Data Source Name
 $conn = new PDO($dsn, 'root', ''); // PDO-verbinding
 
-// Controleer of het formulier is verzonden
-if (isset($_POST['submit'])) {
-    // Verkrijg de ingediende gegevens
-    $gebruikersnaam = $_POST['gebruikersnaam'];
-    $wachtwoord = $_POST['wachtwoord'];
 
     // Bereid een SQL-statement voor om de gebruiker te controleren
     $stmt = $conn->prepare("SELECT * FROM inlog WHERE gebruikersnaam = ? AND wachtwoord = ?");
@@ -16,15 +21,22 @@ if (isset($_POST['submit'])) {
 
     // Controleer of er een gebruiker is gevonden
     if ($user) {
-        // Log de gebruiker in (bijv. start een sessie)
+        // Start de sessie en sla de gebruikersinformatie op
         session_start();
-        $stmt->execute([
-            $naam, $achternaam, $email, $gebruikersnaam, $wachtwoord
-         ]);
-         header('Location: login.html');
-         exit;
+        $_SESSION['gebruikersnaam'] = $gebruikersnaam;
+        $_SESSION['wachtwoord'] = $wachtwoord;
+        
+
+        // Bevestigingsbericht
+        echo "Login successful! Welcome, " . htmlspecialchars($gebruikersnaam) . ".";
+
+    $stmt->execute([
+       $gebruikersnaam, $wachtwoord
+     ]);
+     header('Location: home.html');
+     exit;
     } else {
         echo "Invalid username or password.";
     }
-}
+
 ?>
