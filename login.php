@@ -33,7 +33,7 @@ $conn = new PDO($dsn, 'root', ''); // PDO-verbinding
     $stmt->execute([
        $gebruikersnaam, $wachtwoord
      ]);
-     header('Location: home.html');
+     header('Location: dashboard.php');
      exit;
     } else {
         echo "Invalid username or password.";
