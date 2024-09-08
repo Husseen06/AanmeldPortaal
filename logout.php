@@ -6,6 +6,6 @@ session_start();
 session_destroy();
 
 // Redirect naar de loginpagina
-header('Location: login.html');
+header('Location: regristreren.html');
 exit;
 ?>
