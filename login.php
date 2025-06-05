@@ -1,10 +1,9 @@
-<?php
+    <?php
 // Controleer of het formulier is verzonden via POST
 if(isset($_POST['submit'])) {
     // Als het formulier is verzonden, druk dan de ontvangen gegevens af
     echo "<pre>".print_r($_POST, true)."</pre>";
 }
-
 // Haal de ingediende formuliergegevens op en wijs ze toe aan variabelen
 $gebruikersnaam = $_POST['gebruikersnaam']; // Gebruikersnaam
 $wachtwoord = $_POST['wachtwoord']; // Wachtwoord
